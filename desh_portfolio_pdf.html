@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desh Bagley | Strategic Technology Leader Portfolio</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #1a2e2f;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e6f2f5 100%);
+            font-size: 11pt;
+        }
+        
+        .page {
+            width: 7.5in;
+            min-height: 10in;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        /* Header Design */
+        .header {
+            background: linear-gradient(135deg, #29597F 0%, #3a6b8f 100%);
+            color: white;
+            padding: 1.5in 0.5in 0.8in 0.5in;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 40%);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 4px solid rgba(255,255,255,0.9);
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24pt;
+            font-weight: bold;
+            color: #29597F;
+            background: white;
+        }
+        
+        .name {
+            font-size: 32pt;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            font-size: 14pt;
+            margin-bottom: 12px;
+            font-style: italic;
+            opacity: 0.95;
+        }
+        
+        .philosophy {
+            font-size: 12pt;
+            max-width: 5in;
+            margin: 0 auto;
+            font-style: italic;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 0.3in 0.5in;
+            background: rgba(41, 89, 127, 0.05);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.2in;
+            text-align: center;
+        }
+        
+        .stat {
+            background: white;
+            padding: 0.2in;
+            border-radius: 8px;
+            border: 1px solid rgba(41, 89, 127, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 18pt;
+            font-weight: 900;
+            color: #29597F;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 8pt;
+            color: #1a3a4a;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 0.3in 0.5in;
+        }
+        
+        .section-title {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #29597F;
+            margin-bottom: 0.15in;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1in;
+            height: 2px;
+            background: linear-gradient(135deg, #29597F, #3a6b8f);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 10pt;
+            color: #1a3a4a;
+            margin-bottom: 0.2in;
+            font-style: italic;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.2in;
+            margin-top: 0.2in;
+        }
+        
+        .talent-card, .insight-card {
+            background: rgba(41, 89, 127, 0.06);
+            padding: 0.2in;
+            border-radius: 8px;
+            border: 1px solid rgba(41, 89, 127, 0.15);
+            margin-bottom: 0.15in;
+        }
+        
+        .card-title {
+            font-size: 12pt;
+            font-weight: 700;
+            color: #29597F;
+            margin-bottom: 8px;
+        }
+        
+        .card-desc {
+            font-size: 9pt;
+            color: #1a3a4a;
+            line-height: 1.4;
+        }
+        
+        /* Results Section */
+        .results-section {
+            background: linear-gradient(135deg, #29597F, #3a6b8f);
+            color: white;
+            padding: 0.4in 0.5in;
+            margin: 0.2in 0;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.2in;
+            margin-top: 0.2in;
+        }
+        
+        .result-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.15in;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .result-number {
+            font-size: 20pt;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .result-desc {
+            font-size: 8pt;
+            line-height: 1.3;
+        }
+        
+        /* Transformation Story */
+        .story-section {
+            padding: 0.3in 0.5in;
+            background: rgba(41, 89, 127, 0.05);
+        }
+        
+        .story-content {
+            font-size: 10pt;
+            line-height: 1.6;
+            color: #1a3a4a;
+            text-align: justify;
+        }
+        
+        .story-content p {
+            margin-bottom: 0.1in;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: #29597F;
+            color: white;
+            padding: 0.3in 0.5in;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 16pt;
+            font-weight: 700;
+            margin-bottom: 0.1in;
+        }
+        
+        .contact-subtitle {
+            font-size: 11pt;
+            margin-bottom: 0.2in;
+            font-style: italic;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 0.3in;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            font-size: 10pt;
+            font-weight: 600;
+        }
+        
+        .contact-label {
+            font-weight: 700;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .page {
+                box-shadow: none;
+                width: 100%;
+                margin: 0;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+        
+        /* Page Break Controls */
+        .no-break {
+            page-break-inside: avoid;
+        }
+        
+        .break-before {
+            page-break-before: always;
+        }
+        
+        .break-after {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <div class="header">
+            <div class="header-content">
+                <div class="profile-image">DB</div>
+                <h1 class="name">DESH BAGLEY</h1>
+                <p class="tagline">Implementation Catalyst • Technology Visionary • ROI Accelerator</p>
+                <p class="philosophy">
+                    Your best ideas are waiting in the wings. I specialize in turning "what if" into "mission accomplished" - taking the AI models, automation systems, and technology investments you've been thinking about and making them profitable realities.
+                </p>
+            </div>
+        </div>
+        
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-number">$2M+</span>
+                    <span class="stat-label">Project Funding Activated</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">40%</span>
+                    <span class="stat-label">Implementation Success</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">85%</span>
+                    <span class="stat-label">ROI Achievement</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Executing</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">Implementation Accelerators</h2>
+            <div class="three-column">
+                <div class="talent-card">
+                    <h3 class="card-title">Project Activation</h3>
+                    <p class="card-desc">I turn your "someday" projects into "this quarter" wins. Whether it's AI model training, automation systems, or leveraging new funding, I create executable roadmaps with clear ROI milestones.</p>
+                </div>
+                
+                <div class="talent-card">
+                    <h3 class="card-title">Technology ROI</h3>
+                    <p class="card-desc">Every technology investment should pay dividends. I identify which of your dormant ideas have the highest profit potential and build implementation strategies that deliver measurable returns.</p>
+                </div>
+                
+                <div class="talent-card">
+                    <h3 class="card-title">Visionary Execution</h3>
+                    <p class="card-desc">I see what's possible when others see obstacles. My approach combines strategic vision with tactical execution, turning ambitious technology goals into operational realities.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">Implementation Expertise</h2>
+            <p class="section-subtitle">Turning your technology investments and big ideas into profitable, operational realities</p>
+            <div class="two-column">
+                <div class="insight-card">
+                    <h3 class="card-title">AI Model Implementation</h3>
+                    <p class="card-desc">Transform your AI investments into automated workflows that deliver ROI. I design and deploy custom AI solutions that streamline operations and generate measurable business value.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <h3 class="card-title">Grant Fund Activation</h3>
+                    <p class="card-desc">You've secured the funding - now maximize its impact. I help organizations strategically deploy grant investments in technology that creates lasting competitive advantages.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <h3 class="card-title">Automation Systems</h3>
+                    <p class="card-desc">Identify high-impact automation opportunities and implement systems that eliminate manual processes, reduce costs, and improve accuracy across your organization.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <h3 class="card-title">Dormant Potential Mining</h3>
+                    <p class="card-desc">Every organization has unrealized technology opportunities. I audit your existing resources and identify implementation-ready projects with the highest ROI potential.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 2 -->
+    <div class="page">
+        <div class="results-section">
+            <div class="header-content">
+                <h2 class="section-title" style="color: white; margin-bottom: 0.1in;">Implementation Results</h2>
+                <p style="font-size: 11pt; font-style: italic; margin-bottom: 0.1in;">When visionary thinking meets tactical execution, dormant potential becomes profitable reality</p>
+                
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-number">35%</span>
+                        <span class="result-desc">Efficiency gains through automation</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">$2M+</span>
+                        <span class="result-desc">Technology investments activated</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">40%</span>
+                        <span class="result-desc">Faster project completion</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">85%</span>
+                        <span class="result-desc">Implementation success rate</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">$300K+</span>
+                        <span class="result-desc">Annual savings generated</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-number">100%</span>
+                        <span class="result-desc">ROI achievement on funded projects</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="story-section">
+            <h2 class="section-title">The Implementation Philosophy</h2>
+            <div class="story-content">
+                <p><strong>Your best ideas are already inside your organization - they just need activation.</strong> Whether it's that AI model you've been discussing, the automation system that could streamline operations, or the technology investment sitting in your budget, I specialize in turning potential into profit.</p>
+                
+                <p><strong>Implementation is where vision meets reality.</strong> I don't just create strategies - I build executable roadmaps with clear milestones, measurable ROI, and systems that deliver results from day one. Every project is designed to prove its value quickly and scale sustainably.</p>
+                
+                <p><strong>The result?</strong> Organizations that stop wondering "what if" and start experiencing "mission accomplished." Your dormant potential becomes your competitive advantage, your technology investments generate returns, and your team gains confidence to tackle even bigger challenges.</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="two-column">
+                <div style="font-size: 9pt; line-height: 1.4;">
+                    <p><strong>AI & Automation Implementation:</strong></p>
+                    <ul style="margin-left: 0.2in; margin-bottom: 0.1in;">
+                        <li>Custom AI model training and deployment</li>
+                        <li>Process automation system design</li>
+                        <li>ROI measurement and optimization</li>
+                    </ul>
+                    
+                    <p><strong>Grant & Investment Activation:</strong></p>
+                    <ul style="margin-left: 0.2in; margin-bottom: 0.1in;">
+                        <li>Technology funding strategic deployment</li>
+                        <li>Grant compliance and reporting systems</li>
+                        <li>Investment portfolio optimization</li>
+                    </ul>
+                    
+                    <p><strong>Project Management:</strong></p>
+                    <ul style="margin-left: 0.2in;">
+                        <li>Implementation roadmap development</li>
+                        <li>Cross-functional team coordination</li>
+                        <li>Risk assessment and mitigation</li>
+                    </ul>
+                </div>
+                
+                <div style="font-size: 9pt; line-height: 1.4;">
+                    <p><strong>Technology Assessment:</strong></p>
+                    <ul style="margin-left: 0.2in; margin-bottom: 0.1in;">
+                        <li>Dormant potential identification</li>
+                        <li>Infrastructure readiness evaluation</li>
+                        <li>Integration planning and execution</li>
+                    </ul>
+                    
+                    <p><strong>Performance Optimization:</strong></p>
+                    <ul style="margin-left: 0.2in; margin-bottom: 0.1in;">
+                        <li>Efficiency bottleneck elimination</li>
+                        <li>Workflow automation design</li>
+                        <li>Cost reduction strategy implementation</li>
+                    </ul>
+                    
+                    <p><strong>Strategic Consulting:</strong></p>
+                    <ul style="margin-left: 0.2in;">
+                        <li>Technology roadmap development</li>
+                        <li>Competitive advantage identification</li>
+                        <li>Innovation pipeline management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h2 class="contact-title">Ready to Activate Your Potential?</h2>
+            <p class="contact-subtitle">Let's turn your technology investments and dormant ideas into profitable realities</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">Email:</span> DeshBagley@gmail.com
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Phone:</span> 813-453-8612
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Location:</span> Riverview, FL
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
